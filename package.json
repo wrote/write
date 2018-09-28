@@ -1,6 +1,6 @@
 {
   "name": "@wrote/write",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Write a file to the filesystem.",
   "main": "build",
   "scripts": {
