@@ -1,2 +1,65 @@
-# write
-Write a file to the filesystem.
+# @wrote/write
+
+[![npm version](https://badge.fury.io/js/@wrote/write.svg)](https://npmjs.org/package/@wrote/write)
+
+`@wrote/write` is Write a file to the filesystem.
+
+```sh
+yarn add -E @wrote/write
+```
+
+## Table Of Contents
+
+- [Table Of Contents](#table-of-contents)
+- [API](#api)
+- [`write(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
+  * [`Config`](#type-config)
+- [Copyright](#copyright)
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
+
+## API
+
+The package is available by importing its default function:
+
+```js
+import write from '@wrote/write'
+```
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+
+## `write(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
+
+Call this function to get the result you want.
+
+__<a name="type-config">`Config`</a>__: Options for the program.
+
+|   Name    |   Type    |    Description    | Default |
+| --------- | --------- | ----------------- | ------- |
+| shouldRun | _boolean_ | A boolean option. | `true`  |
+| __text*__ | _string_  | A text to return. | -       |
+
+```js
+/* yarn example/ */
+import write from '@wrote/write'
+
+(async () => {
+  const res = await write({
+    text: 'example',
+  })
+  console.log(res)
+})()
+```
+```
+example
+```
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
+
+## Copyright
+
+(c) [Wrote][1] 2018
+
+[1]: https://wrote.cc
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>
