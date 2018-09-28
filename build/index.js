@@ -1,30 +1,25 @@
-const { debuglog } = require('util');
-
-const LOG = debuglog('@wrote/write')
+const { createWriteStream } = require('fs');
+let erotic = require('erotic'); if (erotic && erotic.__esModule) erotic = erotic.default;
 
 /**
  * Write a file to the filesystem.
- * @param {Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
+ * @param {string} path The path of the file to write.
+ * @param {string|Buffer} data The data to write.
  */
-               async function write(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('@wrote/write called with %s', text)
-  return text
+               async function write(path, data) {
+  if (!path) throw new Error('No path is given.')
+  const er = erotic(true)
+  const ws = createWriteStream(path)
+  await new Promise((r, j) => {
+    ws
+      .on('error', (e) => {
+        const err = er(e)
+        j(err)
+      })
+      .on('close', r)
+      .end(data)
+  })
 }
-
-/* documentary types/index.xml */
-/**
- * @typedef {Object} Config Options for the program.
- * @prop {boolean} [shouldRun=true] A boolean option. Default `true`.
- * @prop {string} text A text to return.
- */
-
 
 module.exports = write
 //# sourceMappingURL=index.js.map
