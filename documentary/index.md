@@ -2,7 +2,7 @@
 
 %NPM: @wrote/write%
 
-`@wrote/write` is Write a file to the filesystem.
+`@wrote/write` is a package to write a file to the filesystem.
 
 ```sh
 yarn add -E @wrote/write

@@ -1,8 +1,8 @@
 # @wrote/write
 
-[![npm version](https://badge.fury.io/js/@wrote/write.svg)](https://npmjs.org/package/@wrote/write)
+[![npm version](https://badge.fury.io/js/%40wrote%2Fwrite.svg)](https://npmjs.org/package/@wrote/write)
 
-`@wrote/write` is Write a file to the filesystem.
+`@wrote/write` is a package to write a file to the filesystem.
 
 ```sh
 yarn add -E @wrote/write
@@ -12,8 +12,7 @@ yarn add -E @wrote/write
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`write(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
-  * [`Config`](#type-config)
+- [`async write(path: string, data?: string|Buffer)`](#async-writepath-stringdata-stringbuffer-void)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -28,30 +27,21 @@ import write from '@wrote/write'
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-## `write(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
+## `async write(`<br/>&nbsp;&nbsp;`path: string,`<br/>&nbsp;&nbsp;`data?: string|Buffer,`<br/>`): void`
 
-Call this function to get the result you want.
-
-__<a name="type-config">`Config`</a>__: Options for the program.
-
-|   Name    |   Type    |    Description    | Default |
-| --------- | --------- | ----------------- | ------- |
-| shouldRun | _boolean_ | A boolean option. | `true`  |
-| __text*__ | _string_  | A text to return. | -       |
+Write data to a file on the filesystem.
 
 ```js
-/* yarn example/ */
 import write from '@wrote/write'
 
-(async () => {
-  const res = await write({
-    text: 'example',
-  })
-  console.log(res)
-})()
+const Write = async (path) => {
+  await write(path, '> example-data')
+  console.log('Written data to %s:', path)
+}
 ```
 ```
-example
+Written data to example/temp/example.txt:
+> example-data
 ```
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>

@@ -8,16 +8,14 @@ import write from '@wrote/write'
 
 %~%
 
-```## write
+```## async write
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["path", "string"],
+  ["data?", "string|Buffer"]
 ]
 ```
 
-Call this function to get the result you want.
-
-%TYPEDEF types/index.xml%
+Write data to a file on the filesystem.
 
 %EXAMPLE: example/example.js, ../src => @wrote/write%
 %FORK example example/example%
