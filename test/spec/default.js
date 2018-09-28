@@ -1,21 +1,33 @@
-import { equal, ok } from 'zoroaster/assert'
-import Context from '../context'
+import { equal, ok, throws } from 'zoroaster/assert'
+import TempContext from 'temp-context'
 import write from '../../src'
 
-/** @type {Object.<string, (c: Context)>} */
+/** @type {Object.<string, (c: TempContext)>} */
 const T = {
-  context: Context,
+  context: TempContext,
   'is a function'() {
     equal(typeof write, 'function')
   },
-  async 'calls package without error'() {
-    await write()
-  },
-  async 'gets a link to the fixture'({ FIXTURE }) {
-    const res = await write({
-      text: FIXTURE,
+  async 'throws with correct stack when not-writable'({ TEMP }) {
+    const test = async () => {
+      await write(TEMP, 'd')
+    }
+    await throws({
+      fn: test,
+      code: 'EISDIR',
+      stack(s) {
+        ok(/at test/.test(s))
+      },
     })
-    ok(res, FIXTURE)
+  },
+}
+
+export const path = {
+  async 'throws when no path is given'() {
+    await throws({
+      fn: write,
+      message: 'No path is given.',
+    })
   },
 }
 

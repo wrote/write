@@ -1,4 +1,4 @@
-// returns the correct output
+// writes correct data
 test
 
 /* expected */

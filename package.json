@@ -28,7 +28,11 @@
   },
   "keywords": [
     "write",
-    "wrote"
+    "wrote",
+    "filesystem",
+    "fs",
+    "stream",
+    "data"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",

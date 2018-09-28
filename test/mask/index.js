@@ -1,15 +1,26 @@
 import { makeTestSuite } from 'zoroaster'
-import Context from '../context'
+import TempContext from 'temp-context'
 import write from '../../src'
 
 const ts = makeTestSuite('test/result', {
-  async getResults(input) {
-    const res = await write({
-      text: input,
-    })
+  /**
+   * @param {string} input
+   * @param {TempContext}
+   */
+  async getResults(input, { resolve, read }) {
+    const f = 'test.data'
+    const p = resolve(f)
+    await write(p, input)
+    const res = await read(f)
     return res
   },
-  context: Context,
+  getThrowsConfig(input) {
+    return {
+      fn: write,
+      args: input,
+    }
+  },
+  context: TempContext,
 })
 
 export default ts
