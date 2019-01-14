@@ -22,4 +22,3 @@ let erotic = require('erotic'); if (erotic && erotic.__esModule) erotic = erotic
 }
 
 module.exports = write
-//# sourceMappingURL=index.js.map
