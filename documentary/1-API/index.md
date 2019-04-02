@@ -17,7 +17,7 @@ import write from '@wrote/write'
 
 Write data to a file on the filesystem.
 
-%EXAMPLE: example/example.js, ../src => @wrote/write%
-%FORK example example/example%
+%EXAMPLE: example/example, ../src => @wrote/write%
+%FORK example/example%
 
 %~%

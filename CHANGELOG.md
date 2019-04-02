@@ -15,5 +15,5 @@
 
 ### 1.0.0
 
-- Create `@wrote/write` with [`mnp`][https://mnpjs.org]
+- Create `@wrote/write` with _[My New Package](https://mnpjs.org)_
 - [repository]: `src`, `test`
