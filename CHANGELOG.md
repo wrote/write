@@ -1,3 +1,9 @@
+## 2 April 2019
+
+### [1.0.3](https://github.com/wrote/write/compare/v1.0.2...v1.0.3)
+
+- [deps] Update `erotic`.
+
 ## 15 January 2019
 
 ### 1.0.2
