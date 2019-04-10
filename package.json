@@ -1,6 +1,6 @@
 {
   "name": "@wrote/write",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Write a file to the filesystem.",
   "main": "build/index.js",
   "module": "src/index.js",
