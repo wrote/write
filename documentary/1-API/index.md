@@ -17,7 +17,7 @@ import write from '@wrote/write'
 
 Write data to a file on the filesystem.
 
-%EXAMPLE: example/example, ../src => @wrote/write%
-%FORK example/example%
+%EXAMPLE: example, ../src => @wrote/write%
+%FORK example%
 
 %~%
